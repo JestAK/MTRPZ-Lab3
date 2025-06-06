@@ -1,11 +1,11 @@
 FROM python:3.12-slim
 WORKDIR /app
 
-COPY . ./../spaceship ./spaceship
-COPY ../../build ./build
-
 COPY ../../requirements/backend.in ./
 RUN pip install --no-cache-dir -r backend.in
+
+COPY . ./../spaceship ./spaceship
+COPY ../../build ./build
 
 EXPOSE 8080
 
